@@ -5,14 +5,22 @@ import './App.css'
 
 function App() {
   const chatBoxRef = useRef(null);
+  // @ts-ignore
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [messages, setMessages] = useState([["Credit @import-hardik","86:56 am","editor"]]);
   const wsRef = useRef();
   const inputRef = useRef<HTMLInputElement | null>(null);
   // @ts-ignore// @ts-ignore
   let activeMembers=0;
 
+  const truePopup = () => {
+    setIsPopupOpen(true);
+  };
+  const falsePopup = () => {
+    setIsPopupOpen(false);
+  };
   useEffect(() => {
-    const ws = new WebSocket("https://451413f5-3145-42e0-8877-1c9d627d9481-00-3jdquaqssmz2y.pike.replit.dev:8080/");
+    const ws = new WebSocket("https://backend-chat-na3t.onrender.com");
     ws.onmessage = (event) => {
       if(JSON.parse(event.data).type=="chat"){
         setMessages(m => [...m, [JSON.parse(event.data).payload.message,JSON.parse(event.data).payload.time,JSON.parse(event.data).payload.browserID,"chat"]])
@@ -36,6 +44,10 @@ function App() {
     // }
     // // name gernate
     ws.onopen = () => {
+      //clearing previous temps
+      falsePopup();
+      sessionStorage.clear();
+
       let name= prompt("Please enter your name:");
       const room= prompt("Please enter your Room:");
       // @ts-ignore
@@ -50,6 +62,9 @@ function App() {
         }
       }))
     }
+    ws.onerror = () => {
+      truePopup();
+    };
     //2 bar message
     return () => {
       ws.close()
@@ -67,6 +82,14 @@ function App() {
 
   return (
 <div className="bg-black text-white flex items-center justify-center min-h-screen">
+  {isPopupOpen && (
+        <div className="popup-overlay">
+          <div className="popup-content">
+            <p className="text-sm text-black text-[7px]">The server is currently initializing. Please wait a moment...
+            </p>
+          </div>
+        </div>
+      )}
       <div className="bg-black p-4 rounded-lg shadow-lg w-full max-w-md border border-[#262626] ">
         {/* Header Section */}
         <div className="mb-2 p-2 rounded bg-black space-x-4">
