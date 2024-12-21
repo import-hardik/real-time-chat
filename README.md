@@ -1,51 +1,71 @@
-# React + TypeScript + Vite
+# Real-Time Chat Application Using WebSockets
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+The Real-Time Chat Application is a lightweight and efficient platform enabling users to communicate in real time within dedicated chat rooms. Built using WebSocket technology, the application ensures low-latency, bidirectional communication and dynamic user interactions.
 
-Currently, two official plugins are available:
+## Features
+- **Real-Time Messaging**: Instant message delivery using WebSockets.
+- **Room-Based Isolation**: Users can join specific chat rooms to maintain context and privacy.
+- **Dynamic UI**: Responsive and intuitive interface built with React.
+- **Active User Tracking**: Displays the number of active users in a room.
+- **Lightweight Backend**: Node.js server for efficient message broadcasting.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies Used
+### Frontend:
+- React
+- CSS for styling
 
-## Expanding the ESLint configuration
+### Backend:
+- Node.js
+- `ws` (WebSocket library)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Deployment:
+- **Frontend**: Hosted on [Vercel](https://vercel.com)
+- **Backend**: Hosted on [render](https://render.com)
 
-- Configure the top-level `parserOptions` property like this:
+## Setup and Installation
+--[Deployed project link](https://import-chat-from-hardik.vercel.app/)
+### Prerequisites:
+- Node.js installed
+- A code editor (e.g., VS Code)
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### Steps:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/[YourUsername]/real-time-chat-app.git
+   cd real-time-chat-app
+   ```
+2. Install dependencies for the backend:
+   ```bash
+   cd backend
+   npm install
+   ```
+3. Start the backend server:
+   ```bash
+   node server.js
+   ```
+4. Install dependencies for the frontend:
+   ```bash
+   cd ../frontend
+   npm install
+   ```
+5. Start the frontend development server:
+   ```bash
+   npm start
+   ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Usage
+1. Open the application in your browser at `http://localhost:3000`.
+2. Enter your name and a room code to join a chat room.
+3. Start sending and receiving messages in real time.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Deployment
+- **Frontend**: Hosted on Vercel for scalable and fast deployment.
+- **Backend**: Deployed on Replit for persistent WebSocket connections.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
-# real-time-chat
+## Future Enhancements
+- Persistent message storage using a database.
+- Support for multimedia messaging (images, files, etc.).
+- Advanced security features, including encryption.
+- User authentication.
+
