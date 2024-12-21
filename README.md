@@ -32,26 +32,24 @@ The Real-Time Chat Application is a lightweight and efficient platform enabling 
 ### Steps:
 1. Clone the repository:
    ```bash
-   git clone https://github.com/[YourUsername]/real-time-chat-app.git
+   git clone https://github.com/import-hardik/real-time-chat-app.git
    cd real-time-chat-app
    ```
 2. Install dependencies for the backend:
    ```bash
-   cd backend
    npm install
    ```
 3. Start the backend server:
    ```bash
-   node server.js
+   Not required
    ```
 4. Install dependencies for the frontend:
    ```bash
-   cd ../frontend
    npm install
    ```
 5. Start the frontend development server:
    ```bash
-   npm start
+   npm run dev
    ```
 
 ## Usage
@@ -61,7 +59,7 @@ The Real-Time Chat Application is a lightweight and efficient platform enabling 
 
 ## Deployment
 - **Frontend**: Hosted on Vercel for scalable and fast deployment.
-- **Backend**: Deployed on Replit for persistent WebSocket connections.
+- **Backend**: Deployed on render for persistent WebSocket connections.
 
 ## Future Enhancements
 - Persistent message storage using a database.
