@@ -24,7 +24,8 @@ The Real-Time Chat Application is a lightweight and efficient platform enabling 
 - **Backend**: Hosted on [render](https://render.com)
 
 ## Setup and Installation
---[Deployed project link](https://import-chat-from-hardik.vercel.app/)
+[Deployed project link](https://import-chat-from-hardik.vercel.app/)
+- Please wait for 30sec for render server to start it will alert you with name and room number when the server is ready
 ### Prerequisites:
 - Node.js installed
 - A code editor (e.g., VS Code)
@@ -32,8 +33,8 @@ The Real-Time Chat Application is a lightweight and efficient platform enabling 
 ### Steps:
 1. Clone the repository:
    ```bash
-   git clone https://github.com/import-hardik/real-time-chat-app.git
-   cd real-time-chat-app
+   git clone https://github.com/import-hardik/real-time-chat.git
+   cd real-time-chat
    ```
 2. Install dependencies for the backend:
    ```bash
